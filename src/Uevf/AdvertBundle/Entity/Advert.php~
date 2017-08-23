@@ -1,0 +1,104 @@
+<?php
+
+namespace Uevf\AdvertBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Advert
+ *
+ * @ORM\Table(name="adverts")
+ * @ORM\Entity(repositoryClass="Uevf\AdvertBundle\Repository\AdvertRepository")
+ */
+class Advert
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="creationDate", type="datetime")
+     */
+    private $creationDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="modifyDate", type="datetime")
+     */
+    private $modifyDate;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
+
+
+    /**
+     * @var relation
+     *
+     * @ORM\ManyToOne(targetEntity="Uevf\UserBundle\Entity\Account");
+     */
+    private $author;
+
+
+    /**
+     * @var relation
+     *
+     * @ORM\ManyToOne(targetEntity="Uevf\AdvertBundle\Entity\AdvertTheme")
+     */
+    private $theme;
+
+    /**
+     * @var relation O-T-M
+     *
+     * @ORM\OneToMany(targetEntity="Uevf\AdvertBundle\Entity\AdvertImage",mappedBy="advert", cascade={"persist","remove"})
+     */
+    private $images;
+
+    private $uploads;
+
+
+
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+    public function __construct()
+    {
+        $this->images = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+    public function setUploads($uploads)
+    {
+        $this->uploads = $uploads;
+    }
+
+    public function getUploads()
+    {
+        return $this->uploads;
+    }
+}

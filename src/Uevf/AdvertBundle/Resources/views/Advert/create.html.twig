@@ -1,0 +1,43 @@
+{% extends "UevfAdvertBundle::layout.html.twig" %}
+
+{% block title %}{{parent()}}{% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+    <style media="screen">
+        textarea {
+            min-height: 300px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="{{asset('asset/main/css/preview-images.css')}}">
+    <link rel="stylesheet" href="{{asset('asset/Simple-Text-Editor/css/jquery.classyedit.css')}}">
+{% endblock %}
+{% block pageContent %}
+    {{form_start(form,{'attr': {'id': 'uevf_advertbundle_advert'}})}}
+    {{form_row(form.title)}}
+    {{form_row(form.type)}}
+    {{form_row(form.theme)}}
+    {{form_row(form.content)}}
+    {{form_row(form.uploads,{'attr' : {'class' : 'hide'}})}}
+    <div class="uploads" id="uploads">
+        <div class="u-add" id="u-add"></div>
+    </div>
+    <button class="btn" type="submit" name="submit" value="submit">
+        Create
+    </button>
+    {{form_end(form)}}
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+    <script>
+        var ROOT_URL = "{{ path('uevf_advert_create')}}";
+        var form = $('#uevf_advertbundle_advert');
+        $uploads = $('#uploads');
+        $(document).ready(function() {
+            $("#uevf_advertbundle_advert_content").ClassyEdit();
+        });
+    </script>
+    <script src="{{ asset('asset/main/js/preview-images.js') }}"></script>
+    <script src="{{ asset('asset/Simple-Text-Editor/js/jquery.classyedit.js') }}"></script>
+{% endblock %}

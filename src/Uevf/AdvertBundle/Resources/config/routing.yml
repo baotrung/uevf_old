@@ -1,0 +1,13 @@
+uevf_advert_homepage:
+    path:     /
+    defaults: { _controller: UevfAdvertBundle:Advert:index }
+
+uevf_advert_create:
+    path:     /create
+    defaults: { _controller: UevfAdvertBundle:Advert:create }
+
+uevf_advert_detail:
+    path:     /detail/{id}
+    defaults: { _controller: UevfAdvertBundle:Advert:detail }
+    requirements:
+        id: \d+

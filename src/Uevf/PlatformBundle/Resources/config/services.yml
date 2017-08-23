@@ -1,0 +1,8 @@
+services:
+#    uevf_platform.example:
+#        class: Uevf\PlatformBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    uevf_platform.authentication:
+        class: Uevf\PlatformBundle\Services\Authentication\Authentication
+        arguments: []

@@ -1,0 +1,196 @@
+<?php
+
+namespace Uevf\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+/**
+ * User
+ *
+ * @ORM\Table(name="users")
+ * @ORM\Entity(repositoryClass="Uevf\UserBundle\Repository\UserRepository")
+ */
+ class User
+ {
+     /**
+      * @var int
+      *
+      * @ORM\Column(name="id", type="integer")
+      * @ORM\Id
+      * @ORM\GeneratedValue(strategy="AUTO")
+      */
+     private $id;
+
+     /**
+      *
+      * @ORM\Column(name="firstname", type="string", length=255)
+      * @Assert\Regex(pattern="/^[a-zA-Z ]+$/",message = "Firstname not valid")
+      */
+     private $firstname;
+
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="lastname", type="string", length=255)
+      * @Assert\Regex(pattern="/^[a-zA-Z ]+$/",message = "Firstname not valid")
+      */
+     private $lastname;
+
+     /**
+      *
+      * @ORM\Column(name="birthday", type="date")
+      */
+     private $birthday;
+
+     /**
+      *
+      * @ORM\Column(name="tel", type="string", length=255)
+      * Assert\Regex(/^[0-9+]+$/,message = "phone number not valid")
+      */
+     private $tel;
+
+     /**
+      *
+      * @ORM\Column(name="address", type="string", length=255)
+      */
+     private $address;
+
+     /**
+      * @ORM\ManyToOne(targetEntity="Uevf\PlatformBundle\Entity\CityFr")
+      * @ORM\JoinColumn(nullable=false)
+      */
+     private $city;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Get firstname
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     *
+     * @return User
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return User
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set tel
+     *
+     * @param string $tel
+     *
+     * @return User
+     */
+    public function setTel($tel)
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    /**
+     * Get tel
+     *
+     * @return string
+     */
+    public function getTel()
+    {
+        return $this->tel;
+    }
+
+    /**
+     * Set city
+     *
+     * @param \Uevf\PlatformBundle\Entity\CityFr $city
+     *
+     * @return User
+     */
+    public function setCity(\Uevf\PlatformBundle\Entity\CityFr $city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return \Uevf\PlatformBundle\Entity\CityFr
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+}

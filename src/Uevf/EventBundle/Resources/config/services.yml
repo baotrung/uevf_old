@@ -1,0 +1,4 @@
+services:
+#    uevf_event.example:
+#        class: Uevf\EventBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

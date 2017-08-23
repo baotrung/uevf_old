@@ -1,0 +1,22 @@
+{% extends 'UevfPlatformBundle::layout.html.twig' %}
+{% block title %}{{parent()}} - Account{% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+    <link rel="stylesheet" href="{{asset('bundles/UevfPlatform/css/form.css')}}" type="text/css"/>
+{% endblock %}
+{% block pageContent %}
+    {{form_start(editForm)}}
+    {{form_widget(editForm)}}
+        <input type="submit" name="edit" value="save" class="btn-default btn float-right black-background white-text margin-left">
+        <input type="button" name="edit" value="modify password" class="btn-default btn float-right black-background white-text">
+    {{form_end(editForm)}}
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var ROOT_URL = "{{ path('uevf_ajax_autocomplete_zipcode')}}"; //your root URL, used in autocomplete-countries.js file
+        var cityList = $("#account_edit_user_city_name");
+        var txt_zipcode = $("#account_edit_user_city_zipcode");
+    </script>
+    <script src="{{ asset('bundles/UevfPlatform/js/autocomplete-zipcode.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+uevf_account_index:
+    path:   /
+    defaults: { _controller: UevfUserBundle:Account:index }
+
+uevf_account_editinfo:
+    path:     /info/edit
+    defaults: { _controller: UevfUserBundle:Account:editinfo }
+
+uevf_account_addinfo:
+    path:     /info/add
+    defaults: { _controller: UevfUserBundle:Account:addinfo }

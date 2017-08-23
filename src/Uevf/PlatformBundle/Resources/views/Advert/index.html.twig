@@ -1,0 +1,13 @@
+{% extends 'UevfPlatformBundle::layout.html.twig' %}
+{% block title %}{{parent()}} - Annonces{% endblock %}
+{% block pageContent %}
+    {% for advert in adverts %}
+        <div class="advert">
+            <img src="{{asset('uploads/img/advert/' ~ advert.image.url)}}" alt="{{advert.image.alt}}"
+            width="600" height="300">
+            <h1><a href="{{ path('uevf_platform_advert_show', { 'id': advert.id }) }}">{{advert.title}}</a></h1>
+            <p><span>par {{advert.author.username}} </span><span> le {{advert.date|date('d-m-Y')}}</span> </p>
+            <p>{{advert.content}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

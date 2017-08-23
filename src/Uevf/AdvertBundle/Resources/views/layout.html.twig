@@ -1,0 +1,9 @@
+{% extends 'UevfPlatformBundle::layout.html.twig' %}
+{% block title %}{{parent()}} - Annonce{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $active = $('#nav-item-echange');
+    </script>
+    {{parent()}}
+{% endblock %}

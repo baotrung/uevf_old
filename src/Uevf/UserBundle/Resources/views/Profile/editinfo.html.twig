@@ -1,0 +1,30 @@
+{% extends 'UevfUserBundle::layout.html.twig' %}
+{% block title %}{{parent()}} - edit{% endblock %}
+{% block pagetitle %}
+<div class="title container-fluid hidden-sm-down">{# styles define in main.css #}
+    PROFIL > INFO PERSO > MODIFICATION
+</div>
+{% endblock %}
+{% block pageContent %}
+    {{ form_start(form,{'attr': {'class': 'col-sm-12 col-md-6 col-lg-4'}}) }}
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.lastname) }}
+    {{ form_row(form.birthday) }}
+    {{ form_row(form.tel) }}
+    {{ form_row(form.address) }}
+    {{ form_row(form.city.zipcode) }}
+    {{ form_row(form.city.name) }}
+    <input type="submit" name="" value="{{'save'|trans}}" class="btn">
+    {{ form_end(form) }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+    <script>
+        var ROOT_URL = "{{ path('uevf_ajax_autocomplete_zipcode')}}"; //your root URL, used in autocomplete-countries.js file
+        var cityList = $("#uevf_userbundle_user_city_name");
+        var txt_zipcode = $("#uevf_userbundle_user_city_zipcode");
+    </script>
+    <script src="{{ asset('asset/main/js/autocomplete-zipcode.js') }}"></script>
+{% endblock %}

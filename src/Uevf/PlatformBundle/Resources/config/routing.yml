@@ -1,0 +1,11 @@
+uevf_platform_homepage:
+    path:     /
+    defaults: { _controller: UevfPlatformBundle:Site:index }
+
+uevf_platform_test:
+    path:   /account/test
+    defaults: { _controller: UevfPlatformBundle:Site:test }
+
+uevf_platform_admin_test:
+    path:   /admin/test
+    defaults: { _controller: UevfPlatformBundle:Site:test }

@@ -1,0 +1,7 @@
+{% extends 'UevfPlatformBundle::layout.html.twig' %}
+{% block title %}{{parent()}} - TEST{% endblock %}
+{% block pageContent %}
+  {{parent()}}
+  <p>test value = {{test}}</p>
+  <p>{{'hello'|trans}}</p>
+{% endblock %}

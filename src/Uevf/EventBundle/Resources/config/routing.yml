@@ -1,0 +1,3 @@
+uevf_event_homepage:
+    path:     /
+    defaults: { _controller: UevfEventBundle:Event:index }

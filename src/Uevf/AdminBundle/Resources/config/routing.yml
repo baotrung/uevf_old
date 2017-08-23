@@ -1,0 +1,11 @@
+uevf_admin_homepage:
+    path:     /
+    defaults: { _controller: UevfAdminBundle:Default:index }
+
+uevf_admin_users_index:
+    path:   /user/
+    defaults: { _controller: UevfAdminBundle:Users:index }
+
+uevf_admin_test_getinfosubmit:
+    path:   /test/infosubmit
+    defaults: { _controller: UevfAdminBundle:Test:infosubmit }

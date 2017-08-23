@@ -1,0 +1,37 @@
+uevf_event:
+    resource: "@UevfEventBundle/Resources/config/routing.yml"
+    prefix:   /event/
+
+uevf_advert:
+    resource: "@UevfAdvertBundle/Resources/config/routing.yml"
+    prefix:   /advert/
+
+uevf_admin:
+    resource: "@UevfAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin/
+
+uevf_platform:
+    resource: "@UevfPlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
+uevf_ajax_autocomplete_zipcode:
+    path:   /ajax/autocomple
+    defaults: { _controller: UevfPlatformBundle:Ajax:showZipCode }
+
+uevf_user:
+    resource: "@UevfUserBundle/Resources/config/routing.yml"
+    prefix: /profile/
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"

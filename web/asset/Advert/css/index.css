@@ -1,0 +1,33 @@
+.advert{
+    display: block;
+    position: relative;
+    border-left: 10px solid rgb(232, 188, 123);
+    background-color: rgba(156, 156, 156, 0.28);
+    padding-left: 5px;
+    height: 160px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+
+.advert:hover{
+    background-color: rgba(156, 156, 156, 0.5);
+}
+
+.advert a{
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.advert .advert-theme{
+    color: rgb(193, 116, 14);
+}
+
+.advert .advert-content{
+    margin-top: 20px;
+    color: rgb(120, 120, 120);
+}

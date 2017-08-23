@@ -1,0 +1,5 @@
+{% extends 'UevfPlatformBundle::layout.html.twig' %}
+{% block title %}{{parent() - admin}}{% endblock %}
+{% block pageContent %}
+    <a href="{{path('uevf_admin_users_index')}}">USERS</a>
+{% endblock %}

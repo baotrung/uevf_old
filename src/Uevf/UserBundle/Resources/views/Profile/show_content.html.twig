@@ -1,0 +1,18 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    {% if app.user.user is null %}
+        <p>Vous n'avez pas encore enregistré vos informations personnelle !!!</p>
+        <a href="{{path('uevf_account_addinfo')}}">Ajoutez maintenant !</a>
+    {% else %}
+        <p>{{ "FIRSTNAME"|trans }}: {{ app.user.user.firstname }}</p>
+        <p>{{ "LASTNAME"|trans }}: {{ app.user.user.lastname }}</p>
+        <p>{{ "PHONE NUMBER"|trans }}: {{ app.user.user.tel }}</p>
+        <p>{{ "ADDRESS"|trans }}: {{ app.user.user.address }}</p>
+        <p>{{ "ZIPCODE"|trans }}: {{ app.user.user.city.zipcode }}</p>
+        <p>{{ "CITY NAME"|trans }}: {{ app.user.user.city.name }}</p>
+        <input type="button" name="mod_info" value="Modifier" class="btn">
+    {% endif %}
+</div>

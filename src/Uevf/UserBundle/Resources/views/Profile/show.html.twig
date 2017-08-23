@@ -1,0 +1,9 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block pagetitle %}
+<div class="title container-fluid hidden-sm-down">{# styles define in main.css #}
+    PROFIL
+</div>
+{% endblock %}
+{% block fos_user_content %}
+{% include "@FOSUser/Profile/show_content.html.twig" %}
+{% endblock fos_user_content %}

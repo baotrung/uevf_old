@@ -1,0 +1,8 @@
+{% extends 'UevfPlatformBundle::layout.html.twig' %}
+{% block title %} {{ parent() }} - Site {% endblock %}
+{% block javascripts %}
+    <script>
+        $active = $('#nav-item-accueil');
+    </script>
+    {{parent()}}
+{% endblock %}

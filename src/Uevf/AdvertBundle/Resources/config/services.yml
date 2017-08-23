@@ -1,0 +1,4 @@
+services:
+#    uevf_advert.example:
+#        class: Uevf\AdvertBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

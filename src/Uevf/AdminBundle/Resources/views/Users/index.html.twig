@@ -1,0 +1,120 @@
+{% extends 'UevfPlatformBundle::layout.html.twig' %}
+{% block title %}{{parent()}} - admin{% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+    <style media="screen">
+        .filter-tool {
+            display: block;
+            border-right: 1px solid rgb(173, 173, 173);
+        }
+        .total_user {
+            background-color: black;
+            padding-left: 15px;
+            color: rgb(244, 244, 244);
+        }
+        .accounts-container {
+            padding: 0;
+        }
+
+        .account-table{
+            margin-left: 10px;
+            width: 95%;
+        }
+        .marginTop {
+            margin-top: 50px;
+        }
+        .btn{
+            margin: 0 !important;
+        }
+    </style>
+{% endblock %}
+{% block pageContent %}
+    <div class="row marginTop">
+        <div class="filter-tool col-md-3">
+            <form class="form_search_user" action="{{path('uevf_admin_users_index')}}" method="post">
+                <div class="row form-group">
+                    <label for="username" class="label col-md-4">{{'USERNAME'|trans}}</label>
+                    <input type="text" name="username" class="form-control col-md-7"/>
+                </div>
+                <div class="row form-group">
+                    <label for="email" class="label col-md-4">{{'EMAIL'|trans}}</label>
+                    <input type="text" name="email" class="form-control col-md-7"/>
+                </div>
+                <div class="row form-group">
+                    <label for="firstname" class="label col-md-4">{{'FIRSTNAME'|trans}}</label>
+                    <input type="text" name="firstname" class="form-control col-md-7"/>
+                </div>
+                <div class="row form-group">
+                    <label for="lastname" class="label col-md-4">{{'LASTNAME'|trans}}</label>
+                    <input type="text" name="lastname" class="form-control col-md-7"/>
+                </div>
+                <div class="row form-group">
+                    <label for="birthday" class="label col-md-4">{{'birthday'|upper|trans}}</label>
+                    <input type="date" name="birthday" class="form-control col-md-7"/>
+                </div>
+                <div class="row form-group">
+                    <label for="tel" class="label col-md-4">{{'phone number'|upper|trans}}</label>
+                    <input type="text" name="tel" class="form-control col-md-7"/>
+                </div>
+                <div class="row form-group">
+                    <label for="zipcode" class="label col-md-4">{{'zipcode'|upper|trans}}</label>
+                    <input type="text" id="ipt_zipcode"  name="zipcode" class="form-control col-md-7"/>
+                </div>
+                <div class="row form-group">
+                    <label for="city" class="label col-md-4">{{'city name'|upper|trans}}</label>
+                    <select type="select" id="ipt_city" name="city" class="form-control col-md-7"/></select>
+                </div>
+                <div class="row">
+                    <input type="submit" name="search" class="btn col-md-3 push-md-8" value="{{'search'|upper|trans}}">
+                </div>
+
+            </form>
+            <p>{{dump(test)}}</p>
+        </div>
+        <div class="accounts-container col-md-9">
+            <p class="total_user">TOTAL UTILISATEUR:
+                {{ numUser }}</p>
+            <table class="account-table" border="1">
+                <tr>
+                    <th>{{'USERNAME'|trans}}</th>
+                    <th>{{'EMAIL'|trans}}</th>
+                    <th>{{'FIRSNAME'|trans}}</th>
+                    <th>{{'LASTNAME'|trans}}</th>
+                    <th>{{'BIRTHDAY'|trans}}</th>
+                    <th>{{'PHONE NUMBER'|trans}}</th>
+                    <th>{{'ADDRESS'|trans}}</th>
+                    <th>{{'ZIPCODE'|trans}}</th>
+                    <th>{{'CYTY NAME'|trans}}</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {% for item in data %}
+                <form class="" action="{{path('uevf_admin_users_index')}}" method="post" onsubmit="return confirm('Do you really want to submit the form?');">
+                    <tr>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.user.firstname}}</td>
+                        <td>{{item.user.lastname}}</td>
+                        <td>{{item.user.birthday|date('d/m/Y')}}</td>
+                        <td>{{item.user.tel}}</td>
+                        <td>{{item.user.address}}</td>
+                        <td>{{item.user.city.zipcode}}</td>
+                        <td>{{item.user.city.name}}</td>
+                        <td><button class="btn" type="submit" name="modify" value="{{item.id}}">modify</button></td>
+                        <td><button class="btn" type="submit" name="delete" value="{{item.id}}">delete</button></td>
+                    </tr>
+                </form>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var ROOT_URL = "{{ path('uevf_ajax_autocomplete_zipcode')}}"; //your root URL, used in autocomplete-countries.js file
+        var cityList = $("#ipt_city");
+        var txt_zipcode = $("#ipt_zipcode");
+    </script>
+    <script src="{{ asset('asset/main/js/autocomplete-zipcode.js') }}"></script>
+{% endblock %}
