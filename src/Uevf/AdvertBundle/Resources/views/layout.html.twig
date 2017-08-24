@@ -1,6 +1,34 @@
 {% extends 'UevfPlatformBundle::layout.html.twig' %}
-{% block title %}{{parent()}} - Annonce{% endblock %}
-
+{% block title %}{{parent()}}
+    - Annonce{% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+    {% stylesheets filter='cssrewrite, scssphp' 'bundles/uevfadvert/css/*' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css"/>
+    {% endstylesheets %}
+{% endblock %}
+{% block pageContent %}
+    <div class="row" style="margin-top:20px;">
+        <div class="col-md-3 hidden-sm-down" style="padding: 0 30px;">
+            <div class="leftside-box anonymous-box row justify-content-md-center">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {% block sideBox %}{% endblock %}
+                {% else %}
+                    <div class="col-md-8 avatar dynamic-square">
+                        <img src="{{asset('uploads/User/account_image/avatar_anonymous_normal.png')}}" alt="avatar">
+                    </div>
+                    <div class="col-md-8">
+                        <a href="#">connection</a>
+                        <a href="#">Register</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-9" style="padding: 0 30px;">
+            {% block mainContain %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
 {% block javascripts %}
     <script>
         $active = $('#nav-item-echange');

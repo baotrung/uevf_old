@@ -1,0 +1,57 @@
+.leftside-box{
+    min-height: 700px;
+    /*background-color: rgb(233, 234, 235);*/
+    box-shadow: 0px 3px 10px #cae4db;
+    padding-top: 10px;
+}
+
+.leftside-box .avatar{
+    background-color: #f2f2f2;
+    border: 5px solid rgb(0, 48, 62);
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.leftside-box .avatar img{
+    width: 100%;
+    height: auto;
+}
+
+.advert{
+    display: block;
+    position: relative;
+    background-color: #fff;
+    border-top: 1px solid #fff;
+    box-shadow: 0px 5px 10px #cae4db;
+    padding: 10px;
+    height: auto;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+.advert:hover{
+    opacity: 0.75;
+    border-top: 1px solid rgb(221, 174, 29);
+    transition: 0.25s;
+}
+
+.advert a{
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.advert .advert-theme{
+    color: rgb(221, 174, 29);
+}
+
+.advert .advert-content{
+    margin-top: 20px;
+    color: rgb(120, 120, 120);
+}

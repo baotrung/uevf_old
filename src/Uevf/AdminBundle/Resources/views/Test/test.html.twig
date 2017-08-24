@@ -1,7 +1,0 @@
-{% extends 'UevfPlatformBundle::layout.html.twig' %}
-{% block pageContent %}
-<p>{{dump(data)}}</p>
-<form class="test" action="{{path('uevf_admin_test_getinfosubmit')}}" method="post">
-    <input type="submit" name="testname" value="testvalue" extra="extra">
-</form>
-{% endblock %}

@@ -1,6 +1,5 @@
-color-pallette{
-    white: #fff;
-    yellow: #dcae1d;
-    dark-blue: #00303f;
-    light-blue: #caefdb;
-}
+NOTE  yellow: rgb(221, 174, 29)
+NOTE  dark-blue: rgb(0, 48, 62)
+NOTE light-blue: rgb(202, 228, 219)
+NOTE inactive: rgba(0, 48, 63, 0.51)
+NOTE light6blue: rgb(0, 161, 175)

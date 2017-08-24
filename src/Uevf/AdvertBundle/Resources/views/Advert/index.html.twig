@@ -1,12 +1,15 @@
 {% extends "UevfAdvertBundle::layout.html.twig" %}
 
 {% block title %}UevfAdvertBundle:Advert:index{% endblock %}
+{% block stylesheets %}
+    {{parent()}}
+{% endblock %}
 {% block pagetitle %}
-    <div class="title container-fluid hidden-sm-down">{# styles define in main.css #}
+    <div class="title container-fluid">{# styles define in main.css #}
         ANNONCES
     </div>
 {% endblock %}
-{% block pageContent %}
+{% block mainContain %}
 <div class="">
 
 </div>
@@ -16,14 +19,10 @@
                 <div class="advert">
                     <a href="{{path("uevf_advert_detail",{id: advert.id})}}"></a>
                     <p class="advert-theme">{{advert.theme.theme}}</p>
-                    <h2>{{advert.title}}</h2>
-                    <p>{{advert.content|striptags}}...</p>
+                    <h3>{{advert.title|length > 50 ? advert.title|slice(0,50) ~ '...' : advert.title}}</h3>
+                    <p>{{ advert.content|length > 100 ? advert.content|slice(0, 100)|striptags ~ '...' : advert.content|striptags}}</p>
                 </div>
             </div>
         {% endfor %}
     </div>
-{% endblock %}
-{% block stylesheets %}
-    {{parent()}}
-    <link rel="stylesheet" href="{{asset('asset/Advert/css/index.css')}}">
 {% endblock %}

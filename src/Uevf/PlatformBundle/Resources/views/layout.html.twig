@@ -3,7 +3,9 @@
     UEVF
 {% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset('asset/main/css/main.css')}}" type="text/css"/>
+{% stylesheets filter='cssrewrite' 'bundles/uevfplatform/css/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
 {% endblock %}
 {% block body %}
 <div class="uevf-util-bar container-fluid text-right">
@@ -50,7 +52,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item nav-link" href="#">BOUTIQUE</a>
-                    <a class="dropdown-item nav-link" href="{{path('uevf_advert_homepage')}}">EVENEMENTS</a>
+                    <a class="dropdown-item nav-link" href="#">EVENEMENTS</a>
                 </div>
             </li>
             <li class="nav-item dropdown" id="nav-item-echange">
@@ -59,7 +61,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item nav-link" href="#">FORUM</a>
-                    <a class="dropdown-item nav-link" href="#">PETITES ANNONCES</a>
+                    <a class="dropdown-item nav-link" href="{{path('uevf_advert_homepage')}}">PETITES ANNONCES</a>
                 </div>
             </li>
             <li class="nav-item" id="nav-item-actualites">
@@ -77,5 +79,8 @@
 
 {% endblock %}
 {% block javascripts %}
-    <script src="{{asset('asset/main/js/main.js')}}" charset="utf-8"></script>
+    {% javascripts filter='jsqueeze'
+        'bundles/uevfplatform/js/main.js'%}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
