@@ -1,0 +1,87 @@
+<header>
+    {#
+    <div class="uevf-util-bar container-fluid text-right">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            Bienvenue
+            <a href="{{ path('uevf_account_index') }}">{{ app.user.username }}</a>
+            -
+            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+        {% endif %}
+    </div>
+    #}
+    <nav class="uevf-menu">
+        <div class="wrap">
+            <div class="uevf-logo">
+                <img class="img" src="{{asset("uploads/Main/icons/logo_01.png")}}" alt="logo">
+                <span class="label">U E V F</span>
+            </div>
+            <div id="uevf-collapse-toggle" class="uevf-collapse-toggle" target="tg01"><img src="{{asset('uploads/Main/icons/menu-icon.png')}}" alt=""></div>
+            <ul class="uevf-navbar" id="tg01">
+                <li id="uevf_item_home" class="item active">
+                    <a href="{{path('uevf_platform_homepage')}}">
+                        <span>{{'uevf_lang_home'|trans|upper}}</span>
+                    </a>
+                </li>
+                <li id="uevf_item_event" class="item">
+                    <a href="#">
+                        <span>{{'uevf_lang_event'|trans|upper}}</span>
+                    </a>
+                </li>
+                <li id="uevf_item_exchange" class="item">
+                    <a href="#">
+                        <span>{{'uevf_lang_exchange'|trans|upper}}</span>
+                        <img src="{{asset('uploads/Main/icons/dropdown-icon.png')}}" alt="dropdown">
+                    </a>
+                    <ul class="subitem-lv1">
+                        <li class="item">
+                            <a href="#">
+                                <span>{{'uevf_lang_forum'|trans|upper}}</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="#">
+                                <span>{{'uevf_lang_announcement'|trans|upper}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="uevf_item_new" class="item">
+                    <a href="#">
+                        <span>{{'uevf_lang_news'|trans|upper}}</span>
+                    </a>
+                </li>
+                <li id="uevf_item_store" class="item">
+                    <a href="#">
+                        <span>{{'uevf_lang_store'|trans|upper}}</span>
+                    </a>
+                </li>
+                <li id="uevf_item_account" class="item spectial">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <a href="#">
+                        <span>{{'hello'|trans|upper ~ " " ~ app.user.username}}</span>
+                    </a>
+                    <ul class="subitem-lv1">
+                        <li class="item">
+                            <a href="{{path('uevf_account_index')}}">
+                                <span>{{'uevf_lang_profile'|trans|upper}}</span>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="{{path('fos_user_security_logout')}}">
+                                <span>{{'uevf_lang_logout'|trans|upper}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                    {% else %}
+                    <a href="{{ path('fos_user_security_login') }}">
+                        <span>{{'uevf_lang_login'|trans|upper}}</span>
+                    </a>
+                    {% endif %}
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

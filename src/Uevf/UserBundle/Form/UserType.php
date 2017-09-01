@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Uevf\PlatformBundle\Form\CityFrType;
 
@@ -17,12 +18,18 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('firstname',null,array('label' => 'FIRSTNAME'))
-        ->add('lastname',null,array('label' => 'LASTNAME'))
-        ->add('birthday',DateType::class,array('label' => 'BIRTHDAY'))
-        ->add('tel',null,array('label' => 'PHONE NUMBER'))
-        ->add('address',null,array('label' => 'ADDRESS'))
-        ->add('city', CityFrType::class,array('label' => 'CITY'));
+        ->add('firstname',null,array('label' => 'uevf.trans.firstname','translation_domain' => 'UevfPlatformBundle'))
+        ->add('lastname',null,array('label' => 'uevf.trans.lastname','translation_domain' => 'UevfPlatformBundle'))
+        ->add('birthday',DateType::class,array('label' => 'uevf.trans.birthday','translation_domain' => 'UevfPlatformBundle'))
+        ->add('gender',ChoiceType::class,array('label' => 'uevf.trans.gender','translation_domain' => 'UevfPlatformBundle',
+            'choices' => array(
+                'uevf.trans.other' => 'OTHER', 'uevf.trans.male' => 'MALE', 'uevf.trans.female' => 'FEMALE'
+            ),
+            'translation_domain' => 'UevfPlatformBundle'
+        ))
+        ->add('tel',null,array('label' => 'uevf.trans.phonenumber','translation_domain' => 'UevfPlatformBundle'))
+        ->add('address',null,array('label' => 'uevf.trans.address','translation_domain' => 'UevfPlatformBundle'))
+        ->add('city', CityFrType::class,array('label' => 'uevf.trans.city','translation_domain' => 'UevfPlatformBundle'));
     }
 
     /**

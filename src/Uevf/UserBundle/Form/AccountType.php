@@ -19,14 +19,16 @@ class AccountType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username')
-            ->add('email')
+            ->add('username',null,array('label' => 'uevf.trans.username', 'translation_domain' => 'UevfPlatformBundle'))
+            ->add('email',null,array('label' => 'uevf.trans.email', 'translation_domain' => 'UevfPlatformBundle'))
             ->add('password', RepeatedType::class, array('type' => PasswordType::class,
+                'label' => 'uevf.trans.pwd',
                 'invalid_message' => 'The password fields must match.',
                 'options' => array('attr' => array('class' => 'password-field')),
                 'required' => true,
-                'first_options'  => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password'),
+                'first_options'  => array('label' => 'uevf.trans.pwd'),
+                'second_options' => array('label' => 'uevf.trans.pwd.repeat'),
+                'translation_domain' => 'UevfPlatformBundle'
             ))
             ->add('user',UserType::class)
             ->add('avatar',AccountImageType::class);

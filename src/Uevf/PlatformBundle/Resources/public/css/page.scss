@@ -1,0 +1,31 @@
+@import "includes/mixins";
+@import "includes/config";
+
+body{
+    background-color: $color-background;
+}
+
+.main{
+    padding: 0;
+}
+
+.pagecover{
+    position: relative;
+    height: 400px;
+    background-image: url(../../../uploads/Main/wallpaper/cover-firework.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.pageContent{
+    position: relative;
+    display: block;
+    width: 96%;
+    margin-top: -5vh;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgb(122, 122, 122);
+    background-color: $color-main;
+}

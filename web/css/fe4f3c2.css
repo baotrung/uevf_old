@@ -1,0 +1,65 @@
+/**
+ * mixin centerer content
+ * @x {booleen}
+ * @y {booleen}
+ */
+body {
+  background-color: #e2e2e2; }
+
+.btn {
+  display: block;
+  cursor: pointer;
+  background-color: #db470e;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px; }
+
+.hide {
+  display: none; }
+
+.no-padding {
+  padding: 0; }
+
+/*# sourceMappingURL=default.css.map */
+
+
+
+/*# sourceMappingURL=form.css.map */
+
+/**
+ * mixin centerer content
+ * @x {booleen}
+ * @y {booleen}
+ */
+.footer {
+  background-color: #3c3d41;
+  color: #fff;
+  padding: 30px 0 20px 0; }
+  .footer .moreinfo {
+    display: block;
+    margin: 10px auto 30px auto;
+    text-align: center;
+    font-size: 12px; }
+    .footer .moreinfo a {
+      margin: 0 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: white; }
+      .footer .moreinfo a:hover {
+        color: #db470e; }
+  .footer .social {
+    display: block;
+    margin: 10px auto 30px auto;
+    text-align: center; }
+    .footer .social a {
+      margin: 0 10px; }
+  .footer .separator {
+    width: 70%;
+    height: 1px;
+    border-radius: 5px;
+    background-color: rgba(98, 98, 98, 0.59);
+    margin: 25px auto; }
+  .footer .copyright {
+    text-align: center; }
+
+/*# sourceMappingURL=footer.css.map */

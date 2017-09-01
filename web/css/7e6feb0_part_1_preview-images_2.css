@@ -1,0 +1,32 @@
+.uploads
+{
+    height: 50px;
+    margin-bottom: 15px;
+    /*background-color: rgb(72, 175, 159);*/
+}
+
+.uploads .u-add
+{
+    cursor: pointer;
+    display: inline-block;
+    vertical-align:top;
+    position: relative;
+    margin-right: 3px;
+    background-color: rgb(212, 83, 125);
+    height: 50px;
+    width: 50px;
+    background-image: url("../../uploads/Main/icons/icon-add.png");
+    background-size: cover;
+}
+
+.uploads .u-preview
+{
+    cursor: pointer;
+    display: inline-block;
+    vertical-align:top;
+    position: relative;
+    margin-right: 3px;
+    background-color: rgb(212, 83, 125);
+    height: 50px;
+    width: 50px;
+}

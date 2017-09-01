@@ -1,0 +1,30 @@
+@import "includes/mixins";
+@import "includes/config";
+
+.carousel {
+    height: 500px;
+    overflow: hidden;
+    .carousel-indicators{
+        li {
+            background-color: rgb(181, 156, 119);
+        }
+        .active {
+            background-color: $color-primary-1;
+        }
+        .carousel-control-next-icon {
+            background-image: url("../../../uploads/Main/icons/next.png");
+        }
+        .carousel-control-prev-icon {
+            background-image: url("../../../uploads/Main/icons/prev.png");
+        }
+    }
+    .carousel-inner{
+        .carousel-item{
+            img {
+                height: 500px;
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+}

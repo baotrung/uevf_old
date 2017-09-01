@@ -1,1 +1,47 @@
-welcome: bienvenu
+Welcome: Bienvenue
+here: ici
+MALE: HOMME
+FEMALE: FEMME
+OTHER: AUTRE
+
+uevf.trans.firstname: Prénom
+uevf.trans.lastname: Nom
+uevf.trans.phonenumber: Numéro téléphone
+uevf.trans.birthday: Date de Naissance
+uevf.trans.address: Adresse
+uevf.trans.zipcode: Code Postal
+uevf.trans.city: Ville
+uevf.trans.gender: Sexe
+uevf.trans.username: Nom d'utitlisateur
+uevf.trans.email: Email
+uevf.trans.pwd: Mot de Passe
+uevf.trans.pwd.repeat: Répéter Mot de Passe
+
+uevf.trans.male: Homme
+uevf.trans.female: Femme
+uevf.trans.other: Autre
+
+uevf_title_h1: union des étudiants vietnamiens
+uevf_title_h2: en france
+
+uevf_lang_home: accueil
+uevf_lang_aboutus: qui somme nous
+uevf_lang_activity: activités
+uevf_lang_store: boutique
+uevf_lang_event: Evenements
+uevf_lang_exchange: échange
+uevf_lang_forum: forum
+uevf_lang_announcement: petite annonce
+uevf_lang_news: Actualité
+uevf_lang_login: Connexion
+uevf_lang_logout: Déconnecxion
+uevf_lang_profile: espace utilisateur
+uevf_lang_contact: contactez nous
+uevf_lang_legal: information légale
+uevf_lang_privacy: politique de confidentialité
+uevf_lang_question_noAccount: Pas encore de compte? Inscrivez-vous
+
+join: rejoignez
+play: profitez
+share: partagez
+uevf_event_invitation: Découvrez nos événements à venir! Ne manquez rien!

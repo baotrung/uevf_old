@@ -3,21 +3,14 @@
     UEVF
 {% endblock %}
 {% block stylesheets %}
-{% stylesheets filter='cssrewrite' 'bundles/uevfplatform/css/*' %}
+{% stylesheets filter='cssrewrite'
+    'bundles/uevfplatform/css/default.css'
+    'bundles/uevfplatform/css/form.css'
+    'bundles/uevfplatform/css/footer.css'%}
     <link rel="stylesheet" href="{{ asset_url }}"/>
 {% endstylesheets %}
 {% endblock %}
 {% block body %}
-<div class="uevf-util-bar container-fluid text-right">
-    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        Bienvenue
-        <a href="{{ path('uevf_account_index') }}">{{ app.user.username }}</a>
-        -
-        <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
-    {% else %}
-        <a href="{{ path('fos_user_security_login') }}">Connexion</a>
-    {% endif %}
-</div>
     {# On affiche les messages flash que définissent les contrôleurs du bundle #}
     {% for key, messages in app.session.flashbag.all() %}
         {% for message in messages %}
@@ -29,57 +22,22 @@
 
     {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
 
+{# include header #}
+{% block header %}{% endblock %}
 
-<nav class="navbar navbar-toggleable-sm uevf-menu-bar">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="{{path('uevf_platform_homepage')}}">
-        <img src="{{asset('uploads/Main/icons/logo_01.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
-        <span>U E V F</span>
-    </a>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-            <li class="nav-item" id="nav-item-accueil" id="nav-item-accueil">
-                <a class="nav-link" href="{{path('uevf_platform_homepage')}}">ACCUEIL</a>
-            </li>
-            <li class="nav-item" id="nav-item-apropos">
-                <a class="nav-link" href="#">QUI SOMME NOUS</a>
-            </li>
-            <li class="nav-item dropdown" id="nav-item-activity">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ACTIVITES
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item nav-link" href="#">BOUTIQUE</a>
-                    <a class="dropdown-item nav-link" href="#">EVENEMENTS</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown" id="nav-item-echange">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    ECHANGE
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item nav-link" href="#">FORUM</a>
-                    <a class="dropdown-item nav-link" href="{{path('uevf_advert_homepage')}}">PETITES ANNONCES</a>
-                </div>
-            </li>
-            <li class="nav-item" id="nav-item-actualites">
-                <a class="nav-link" href="#">ACTUALITES</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-{% block pagetitle %}{% endblock %}
-<div class="container-fluid">
+<div class="container-fluid main">
+    {% block pagecover %}
+        <div class="pagecover">
+            
+        </div>
+    {% endblock %}
     {% block pageContent %}{% endblock %}
 </div>
 
 
 {% endblock %}
 {% block javascripts %}
-    {% javascripts filter='jsqueeze'
+    {% javascripts
         'bundles/uevfplatform/js/main.js'%}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}

@@ -1,5 +1,135 @@
 {% extends 'UevfPlatformBundle::layout.html.twig' %}
-{% block title %} {{ parent() }} - Site {% endblock %}
+{% block title %}
+    {{ parent() }}
+    - Site
+{% endblock %}
+
+{% block stylesheets %}
+{{parent()}}
+{% stylesheets filter='cssrewrite'
+    'bundles/uevfplatform/css/uevf-header.css'
+    'bundles/uevfplatform/css/home_page.css'%}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+{% endblock %}
+{# include header #}
+{% block header %}
+    {{ include("UevfPlatformBundle::header.html.twig") }}
+{% endblock %}
+
+{% block pagecover %}
+    <div class="pagecover">
+        <div class="content">
+            <h1>{{'uevf_title_h1'|trans|upper}}</h1>
+            <h2>{{'uevf_title_h2'|trans|upper}}</h2>
+        </div>
+    </div>
+{% endblock %}
+{% block pageContent %}
+    <div class="pageContent">
+        <div class="aboutus row justify-content-center">
+            <p class="col-7">
+                Regrouper les étudiants et les stagiaires vietnamiens dans le but de développer l'entraide sociale et scolaire. Organiser toute activité à caractère éducatif, sportif, humanitaire, social ou culturel liée au Vietnam en France ou en Europe. Développer
+                des échanges culturels, médicaux, techniques et économiques entre la France et le Vietnam.
+            </p>
+        </div>
+        <div class="parallax">
+            <div class="invite row justify-content-center">
+                <a class="col-md-3" href="#">{{'join'|trans|upper}}</a>
+                <a class="col-md-3" href="#">{{'play'|trans|upper}}</a>
+                <a class="col-md-3" href="#">{{'share'|trans|upper}}</a>
+            </div>
+        </div>
+        <div class="section section-events">
+            <h2 class="section-title">{{"uevf_lang_event"|trans}}</h2>
+            <p class="section-subtitle">{{"uevf_event_invitation"|trans}}</p>
+            <div class="section-contain row justify-content-center">
+                <div class="event col-sm-9 col-md-4 col-lg-3">
+                    <div class="image">
+                        <img src="{{asset('uploads/Event/img/colorrun.jpg')}}" alt="eventimg">
+                    </div>
+                    <div class="description">
+                        <h3 class="title">Run For Charity</h3>
+                        <p>Một giải chạy SIÊU HOT dành cho giới trẻ được tổ chức tại Hà Nội với sự tham gia của hàng ngàn bạn trẻ Việt Nam trong nước và quốc tế cùng tụ hội tham gia. </p>
+                    </div>
+                    <div class="date">
+                        06<br>AUG
+                    </div>
+                </div>
+                <div class="event col-sm-9 col-md-4 col-lg-3">
+                    <div class="image">
+                        <img src="{{asset('uploads/Event/img/fete_humanite.png')}}" alt="eventimg">
+                    </div>
+                    <div class="description">
+                        <h3 class="title">Fête de l'Huma</h3>
+                        <p>Fête de l'Huma là một sự kiện văn hoá thể thao thường niên rất lớn, đặc sắc, do báo L'Humanité tổ chức</p>
+                    </div>
+                    <div class="date">
+                        25 AUG
+                    </div>
+                </div>
+                <div class="event col-sm-9 col-md-4 col-lg-3">
+                    <div class="image">
+                        <img src="{{asset('uploads/Event/img/spacenight.jpg')}}" alt="eventimg">
+                    </div>
+                    <div class="description">
+                        <h3 class="title">Space Night</h3>
+                        <p>Đêm nhạc / DJ với những ca sĩ hàng đầu Showbiz Underground Việt: Soobin Hoàng Sơn, Rhymastic, Andree Right Hand</p>
+                    </div>
+                    <div class="date">
+                        30 <br>SEP
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-news">
+            <h2 class="section-title">{{"uevf_lang_news"|trans}}</h2>
+            <p class="section-subtitle">{{"uevf_event_invitation"|trans}}</p>
+            <div class="section-contain row justify-content-center">
+                <div class="col-sm-12 col-md-10 row justify-content-center news">
+                    <div class="col-sm-12 col-md-10 col-lg-5 img" style="background-image: url('{{asset('uploads/News/img/typhonhalo.jpg')}}')"></div>
+                    <div class="col-sm-12 col-md-10 col-lg-5 description">
+                        <h3>Typhon Hato : le bilan s'alourdit à 12 morts</h3>
+                        <p class="topic">International</p>
+                        <p class="content">
+                            Huit personnes ont été tuées à Macao, le paradis du jeu le plus durement touché par la tempête mercredi 23 août. L'ancien comptoir portugais a subi d'importantes inondations, selon les images des médias locaux, qui montraient des voitures sous l'eau et des gens en train de nager dans la rue.
+                            <br>
+                            Un homme est mort écrasé par un mur, un autre est tombé d'une terrasse située au quatrième étage, et un touriste chinois a péri renversé par un camion. Le gouvernement de Macao a annoncé que le corps d'un homme avait été retrouvé jeudi matin 24 août dans un parking mais n'a fourni aucune précision sur les autres décès.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-10 row justify-content-center news">
+                    <div class="col-md-10 col-lg-5 img" style="background-image: url('{{asset('uploads/News/img/seagame.jpg')}}')"></div>
+                    <div class="col-md-10 col-lg-5 flex-lg-first description">
+                        <h3>SEA Games 29 : deux nouvelles médailles d’or grâce au taekwondo et judo</h3>
+                        <p class="topic">Culture</p>
+                        <p class="content">
+                            L’équipe féminine de futsal et la taekwondoïste Pham Thi Hiên ont décroché l'argent.
+                            <br>
+                            À cela viennent s'ajouter quatre médailles de bronze, décrochées par Nguyên Anh Tuân en billard, Ly Hông Phuc en taekwondo, et par les équipes féminine et masculine de volley-ball.
+                            <br>
+                            Le Vietnam compte ainsi, dimanche après-midi 27 août, 52 médailles d’or, soit l’objectif fixé qui était de décrocher entre 49 et 59 médailles d’or pour terminer dans le top 3 du classement par nations.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-10 row justify-content-center news">
+                    <div class="col-md-10 col-lg-5 img" style="background-image: url('{{asset('uploads/News/img/congres.jpg')}}')"></div>
+                    <div class="col-md-10 col-lg-5 description">
+                        <h3>Congrès de l’Association d'amitié Vietnam - Russie et Vietnam - Palestine</h3>
+                        <p class="topic">Société</p>
+                        <p class="content">
+                            Le Congrès a élu un nouveau Comité exécutif de 30 membres avec à sa tête Dô Manh Hai, secrétaire du Comité du Parti et président du Conseil populaire de l’arrondissement de Long Biên.
+                            <br>
+                            L’association a fixé ses orientations avec les activités comme la création des sous-associations dans les secteurs de l’industrie, de la santé et des arrondissements et districts,  le renforcement de la coopération avec des partenaires de Moscou et d’autres villes russes, l’appel aux contributions des Viêt kiêu au développement de la capitale et du Vietnam…
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'UevfPlatformBundle::footer.html.twig' %}
+    </div>
+{% endblock %}
+
 {% block javascripts %}
     <script>
         $active = $('#nav-item-accueil');

@@ -1,0 +1,111 @@
+@import "../../bundles/uevfplatform/css/includes/mixins";
+@import "../../bundles/uevfplatform/css/includes/config";
+
+.body{
+    background-color: rgb(195, 195, 195);
+}
+.uevf-menu {
+    display: block;
+    width: 100%;
+    height: $height-menu;
+    background-color: $color-main;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    .wrap {
+        @extend .uevf-menu;
+        padding: 0 10px;
+        position: relative;
+
+        .uevf-logo {
+            display: block;
+            width: auto;
+            height: ($height-menu*8/10 );
+            position: absolute;
+            @include centerer(false,true);
+
+            .img {
+                float: left;
+                width: ($height-menu*8/10 );
+                height: ($height-menu*8/10 );
+            }
+
+            .label{
+                float: left;
+
+                font-size: 35px;
+                font-weight: 650;
+                line-height: ($height-menu*8/10);
+                color: $color-dark-blue;
+            }
+        }
+
+        .uevf-collapse-toggle{
+            float:right;
+            display: none;
+        }
+
+        .uevf-navbar{
+            height: $height-menu;
+            position: relative;
+            float: right;
+            @include centerer(false,true);
+
+            &>.item{
+                display: inline-block;
+                height: 100%;
+                padding: 0 10px;
+                position: relative;
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    padding: 0;
+                    margin: 0;
+
+                    position: relative;
+                    span{
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: $height-menu;
+                        position: relative;
+                        color: $color-dark-blue;
+                    }
+                }
+                .subitem-lv1{
+                    display: none;
+                }
+                &:hover{
+                    background-color: $color-light-blue;
+                    .subitem-lv1{
+                        display: block;
+                        list-style-type: none;
+                        padding: 5px;
+                        position: absolute;
+                        left: 0;
+                        background-color: $color-light-blue;
+                        .item{
+                            width: 100px;
+                            height: $height-menu*5/10;
+                            position: relative;
+                            a{
+                                margin: 0;
+                                padding: 0;
+                                width: 100%;
+                                height: 100%;
+                                span{
+                                    line-height: 0;
+                                    font-weight: 500;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

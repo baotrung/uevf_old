@@ -14,7 +14,7 @@ class AccountImageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('file', FileType::class,array('label' => 'Avatar'));
+        $builder->add('file', FileType::class,array('label' => 'Profile Picture'));
     }
 
     /**

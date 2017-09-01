@@ -1,5 +1,32 @@
-{% extends "@FOSUser/layout.html.twig" %}
+{% extends "UevfPlatformBundle::layout.html.twig" %}
 
-{% block fos_user_content %}
-{% include "@FOSUser/Registration/register_content.html.twig" %}
-{% endblock fos_user_content %}
+{% block title %}
+    {{parent()}} - {{'Login'}}
+{% endblock %}
+
+{% block stylesheets %}
+{{parent()}}
+{% stylesheets filter='cssrewrite'
+    'bundles/uevfplatform/css/uevf-header.css'
+    'bundles/uevfuser/css/register.css'%}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+{% endblock %}
+
+{% block header %}
+    {{ include("UevfPlatformBundle::header.html.twig") }}
+{% endblock %}
+
+{% block pageContent %}
+    <div class="row justify-content-center">
+        <div class="form col-sm-10 col-md-8 col-lg-6 align-self-center row align-items-center">
+            <div class="col-md-6 image hidden-sm-down">
+                <h1>{{ "Welcome"|trans }}</h1>
+            </div>
+            <div class="inputfield col-sm-12 col-md-6">
+                <div class="logo"><img src="{{asset('uploads/Main/icons/logo_01.png')}}" alt="logo"></div>
+                {% include "@FOSUser/Registration/register_content.html.twig" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

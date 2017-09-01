@@ -40,6 +40,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
      /**
       *
+      * @ORM\Column(name="gender",  type="string", length=20)
+      */
+     private $gender;
+
+     /**
+      *
       * @ORM\Column(name="birthday", type="date")
       */
      private $birthday;
@@ -216,5 +222,29 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
     public function getBirthday()
     {
         return $this->birthday;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender
+     *
+     * @return User
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get gender
+     *
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 }

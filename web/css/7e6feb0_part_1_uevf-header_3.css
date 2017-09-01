@@ -1,0 +1,91 @@
+/**
+ * mixin centerer content
+ * @x {booleen}
+ * @y {booleen}
+ */
+.body {
+  background-color: #c3c3c3; }
+
+.uevf-menu, .uevf-menu .wrap {
+  display: block;
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; }
+  .uevf-menu .wrap {
+    padding: 0 10px;
+    position: relative; }
+    .uevf-menu .wrap .uevf-logo {
+      display: block;
+      width: auto;
+      height: 56px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+      .uevf-menu .wrap .uevf-logo .img {
+        float: left;
+        width: 56px;
+        height: 56px; }
+      .uevf-menu .wrap .uevf-logo .label {
+        float: left;
+        font-size: 35px;
+        font-weight: 650;
+        line-height: 56px;
+        color: #00303e; }
+    .uevf-menu .wrap .uevf-collapse-toggle {
+      float: right;
+      display: none; }
+    .uevf-menu .wrap .uevf-navbar {
+      height: 70px;
+      position: relative;
+      float: right;
+      top: 50%;
+      transform: translateY(-50%); }
+      .uevf-menu .wrap .uevf-navbar > .item, .uevf-menu .wrap .wrap .uevf-navbar > .item {
+        display: inline-block;
+        height: 100%;
+        padding: 0 10px;
+        position: relative; }
+        .uevf-menu .wrap .uevf-navbar > .item a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          padding: 0;
+          margin: 0;
+          position: relative; }
+          .uevf-menu .wrap .uevf-navbar > .item a span {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 70px;
+            position: relative;
+            color: #00303e; }
+        .uevf-menu .wrap .uevf-navbar > .item .subitem-lv1 {
+          display: none; }
+        .uevf-menu .wrap .uevf-navbar > .item:hover, .uevf-menu .wrap .wrap .uevf-navbar > .item:hover {
+          background-color: rgba(202, 228, 219, 0.75); }
+          .uevf-menu .wrap .uevf-navbar > .item:hover .subitem-lv1 {
+            display: block;
+            list-style-type: none;
+            padding: 5px;
+            position: absolute;
+            left: 0;
+            background-color: rgba(202, 228, 219, 0.75); }
+            .uevf-menu .wrap .uevf-navbar > .item:hover .subitem-lv1 .item {
+              width: 100px;
+              height: 35px;
+              position: relative; }
+              .uevf-menu .wrap .uevf-navbar > .item:hover .subitem-lv1 .item a {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%; }
+                .uevf-menu .wrap .uevf-navbar > .item:hover .subitem-lv1 .item a span {
+                  line-height: 0;
+                  font-weight: 500;
+                  font-size: 15px; }
+
+/*# sourceMappingURL=uevf-header.css.map */

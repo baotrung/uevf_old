@@ -1,0 +1,36 @@
+/**
+ * mixin centerer content
+ * @x {booleen}
+ * @y {booleen}
+ */
+@mixin centerer($x, $y) {
+     @if $x{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $y {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+@mixin placeholdercolor ($color){
+    &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $color;
+    }
+
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $color;
+    }
+
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: $color;
+    }
+
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        color: $color;
+    }
+}

@@ -17,8 +17,8 @@ class CityFrType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('zipcode',null,array('label' => 'ZIPCODE'))
-            ->add('name',ChoiceType::class,array("choices" => array(),'label' => 'CITY NAME'));
+            ->add('zipcode',null,array('label' => 'uevf.trans.zipcode','translation_domain' => 'UevfPlatformBundle'))
+            ->add('name',ChoiceType::class,array("choices" => array(),'label' => 'uevf.trans.city','translation_domain' => 'UevfPlatformBundle'));
 
          $builder->addEventListener(
             FormEvents::PRE_SUBMIT,

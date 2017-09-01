@@ -1,25 +1,42 @@
-{% extends "@FOSUser/layout.html.twig" %}
-{% block pagetitle %}
+{% extends "UevfPlatformBundle::layout.html.twig" %}
+{% block title %}
 <div class="title container-fluid hidden-sm-down">{# styles define in main.css #}
-    {{'PROFILE'|trans}}
+    {{parent() ~ 'profile'}}
 </div>
 {% endblock %}
-{% block fos_user_content %}
-<div class="user_show">
-    <p>{{ 'USERNAME'|trans }}: {{ app.user.username }}</p>
-    <p>{{ 'EMAIL'|trans }}: {{ app.user.email }}</p>
-    {% if app.user.user is null %}
-        <p>Vous n'avez pas encore enregistré vos informations personnelle !!!</p>
-        <a href="{{path('uevf_account_addinfo')}}">Ajoutez maintenant !</a>
-    {% else %}
-        <p>{{ "FIRSTNAME"|trans }}: {{ app.user.user.firstname }}</p>
-        <p>{{ "LASTNAME"|trans }}: {{ app.user.user.lastname }}</p>
-        <p>{{ "PHONE NUMBER"|trans }}: {{ app.user.user.tel }}</p>
-        <p>{{ "BIRTHDAY"|trans }}: {{ app.user.user.birthday|date("d/m/Y") }}</p>
-        <p>{{ "ADDRESS"|trans }}: {{ app.user.user.address }}</p>
-        <p>{{ "ZIPCODE"|trans }}: {{ app.user.user.city.zipcode }}</p>
-        <p>{{ "CITY NAME"|trans }}: {{ app.user.user.city.name }}</p>
-        <a class="btn" href="{{ path('uevf_account_editinfo') }}">{{'MODIFY'|trans}}</a>
-    {% endif %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='cssrewrite'
+        'bundles/uevfplatform/css/uevf-header.css'
+        'bundles/uevfplatform/css/page.css'%}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block header %}
+    {{ include("UevfPlatformBundle::header.html.twig") }}
+{% endblock %}
+
+{% block pageContent %}
+<div class="pageContent">
+    <div class="user_show">
+        <p>{{ 'uevf.trans.username'|trans|upper }}: {{ app.user.username }}</p>
+        <p>{{ 'uevf.trans.email'|trans|upper }}: {{ app.user.email }}</p>
+        {% if app.user.user is null %}
+            <p>Vous n'avez pas encore enregistré vos informations personnelle !!!</p>
+            <a href="{{path('uevf_account_addinfo')}}">Ajoutez maintenant !</a>
+        {% else %}
+            <p>{{ "uevf.trans.firstname"|trans|upper }}: {{ app.user.user.firstname }}</p>
+            <p>{{ "uevf.trans.lastname"|trans|upper }}: {{ app.user.user.lastname }}</p>
+            <p>{{ "uevf.trans.gender"|trans|upper }}: {{ app.user.user.gender|trans }}</p>
+            <p>{{ "uevf.trans.birthday"|trans|upper }}: {{ app.user.user.birthday|date("d/m/Y") }}</p>
+            <p>{{ "uevf.trans.phonenumber"|trans|upper }}: {{ app.user.user.tel }}</p>
+            <p>{{ "uevf.trans.address"|trans|upper }}: {{ app.user.user.address }}</p>
+            <p>{{ "uevf.trans.zipcode"|trans|upper }}: {{ app.user.user.city.zipcode }}</p>
+            <p>{{ "uevf.trans.city"|trans|upper }}: {{ app.user.user.city.name }}</p>
+            <a class="btn" href="{{ path('uevf_account_editinfo') }}">{{'MODIFY'|trans}}</a>
+        {% endif %}
+    </div>
 </div>
-{% endblock fos_user_content %}
+
+{% endblock pageContent %}
