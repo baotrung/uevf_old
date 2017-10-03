@@ -11,8 +11,9 @@ body{
 
 .pagecover{
     position: relative;
-    height: 400px;
-    background-image: url(../../../uploads/Main/wallpaper/cover-firework.jpg);
+    padding-top: $height-menu+15;
+    padding-bottom: 5vh;
+    background-image: url(../../../uploads/Main/wallpaper/ship.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -25,6 +26,7 @@ body{
     margin-top: -5vh;
     margin-left: auto;
     margin-right: auto;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgb(122, 122, 122);
     background-color: $color-main;

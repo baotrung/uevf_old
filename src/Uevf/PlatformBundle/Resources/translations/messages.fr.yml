@@ -3,6 +3,7 @@ here: ici
 MALE: HOMME
 FEMALE: FEMME
 OTHER: AUTRE
+years old: ans
 
 uevf.trans.firstname: Prénom
 uevf.trans.lastname: Nom
@@ -40,6 +41,7 @@ uevf_lang_contact: contactez nous
 uevf_lang_legal: information légale
 uevf_lang_privacy: politique de confidentialité
 uevf_lang_question_noAccount: Pas encore de compte? Inscrivez-vous
+uevf.trans.profile.remindEvent: N'oubliez pas les événements auxquels vous allez participer...
 
 join: rejoignez
 play: profitez

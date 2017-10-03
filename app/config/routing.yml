@@ -1,3 +1,7 @@
+uevf_shop:
+    resource: "@UevfShopBundle/Resources/config/routing.yml"
+    prefix:   /shop/
+
 uevf_event:
     resource: "@UevfEventBundle/Resources/config/routing.yml"
     prefix:   /event/

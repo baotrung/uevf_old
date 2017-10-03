@@ -31,7 +31,7 @@ use FOS\UserBundle\Model\User as BaseAccount;
 
 
      /**
-      * @ORM\OneToOne(targetEntity="Uevf\UserBundle\Entity\AccountImage", cascade={"persist"});
+      * @ORM\ManyToOne(targetEntity="Uevf\UserBundle\Entity\AccountImage", cascade={"persist"});
       */
      protected  $avatar;
 

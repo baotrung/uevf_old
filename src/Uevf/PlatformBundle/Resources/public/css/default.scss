@@ -3,17 +3,25 @@
 
 body {
     background-color: $color-background;
+    overflow-x: hidden;
 }
 
 
 .btn {
     display: block;
+    @include pre-wrap;
     cursor: pointer;
     background-color: $color-primary-1;
     font-weight: bold;
-    color: white;
+    color: $color-main;
     border-radius: 5px;
+    transition: .2s;
+    &:hover{
+        color: $color-main;
+        opacity: .75;
+    }
 }
+
 
 .hide {
     display: none;
@@ -21,4 +29,8 @@ body {
 
 .no-padding{
     padding: 0;
+}
+
+.txtCenter{
+    text-align: center;
 }

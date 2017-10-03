@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Uevf\AdminBundle\UevfAdminBundle(),
             new Uevf\AdvertBundle\UevfAdvertBundle(),
             new Uevf\EventBundle\UevfEventBundle(),
+            new Uevf\ShopBundle\UevfShopBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

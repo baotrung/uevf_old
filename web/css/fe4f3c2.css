@@ -4,21 +4,39 @@
  * @y {booleen}
  */
 body {
-  background-color: #e2e2e2; }
+  background-color: #e2e2e2;
+  overflow-x: hidden; }
 
 .btn {
   display: block;
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
   cursor: pointer;
-  background-color: #db470e;
+  background-color: #ee7242;
   font-weight: bold;
-  color: white;
-  border-radius: 5px; }
+  color: #fff;
+  border-radius: 5px;
+  transition: .2s; }
+  .btn:hover {
+    color: #fff;
+    opacity: .75; }
 
 .hide {
   display: none; }
 
 .no-padding {
   padding: 0; }
+
+.txtCenter {
+  text-align: center; }
 
 /*# sourceMappingURL=default.css.map */
 
@@ -46,7 +64,7 @@ body {
       text-decoration: none;
       color: white; }
       .footer .moreinfo a:hover {
-        color: #db470e; }
+        color: #ee7242; }
   .footer .social {
     display: block;
     margin: 10px auto 30px auto;

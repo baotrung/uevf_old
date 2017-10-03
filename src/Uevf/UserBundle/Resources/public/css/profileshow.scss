@@ -1,0 +1,178 @@
+@import "../../uevfplatform/css/includes/config";
+@import "../../uevfplatform/css/includes/mixins";
+
+.pageContent{
+    background-color: $color-transparent;
+    box-shadow: 0 0 0 #fff;
+    padding: 0;
+    &>.row{
+        padding: 0;
+    }
+}
+
+.avatar{
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid $color-main-transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.accInfo{
+    display: block;
+    width: 100%;
+    @include heightAndLineHeight(30px);
+    color: $color-main-transparent;
+    text-align: center;
+}
+
+.user_info{
+    height: auto;
+    @media #{$screen-lg}{
+        max-height: 380px;
+    }
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgb(122, 122, 122);
+    background-color: $color-main;
+    margin: 0 20px 25px 20px;
+    padding: 10px;
+    a{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .name{
+        color: $color-primary-2;
+        font-size: 23px;
+        font-weight: 800;
+        margin-bottom: 25px;
+        //border-bottom: 1px solid;
+    }
+
+    .genderandage{
+        margin-bottom: 25px;
+        p{
+            color: $color-primary-1;
+            font-weight: 700;
+            @include heightAndLineHeight(35px);
+        }
+        .gender{
+            border-right: 1px solid $color-faded;
+        }
+    }
+
+    .info{
+        width: 100%;
+        margin:auto;
+        margin-bottom: 10px;
+        img{
+            width: 100%;
+            background-color: $color-primary-1;
+        }
+        .img{
+            padding: 0;
+        }
+
+        .label{
+            height: 30px;
+            p{
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+.user_control{
+    margin: 0 20px 25px 20px;
+    padding: 0;
+}
+
+.controler{
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgb(122, 122, 122);
+    background-color: $color-main;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 25px;
+    a{
+        display: block;
+        width: 100px;
+        margin: auto;
+    }
+}
+
+.event-control{
+    .event{
+        position: relative;
+        margin: 20px 20px;
+        padding: 0;
+        background-color: white;
+        border-radius: 5px;
+        box-sizing: border-box;
+        box-shadow: 0px 3px 7px 0px rgba(93, 93, 93, 0.54);
+        .date{
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: $color-primary-1;
+            color: white;
+            text-align: center;
+            position: absolute;
+            top: -15px;
+            left: -15px;
+        }
+        .image{
+            background-color: rgb(162, 96, 74);
+            display: block;
+            width: 100%;
+            height: 150px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+        .description{
+            background-color: rgba(255, 255, 255, 0.85);
+            display: block;
+            width: 100%;
+            height: 70px;
+            border-radius: 0 0 5px 5px;
+            padding: 20px 10px 10px 10px;
+            text-align: center;
+            overflow: hidden;
+            .title{
+                color: $color-primary-2;
+            }
+        }
+    }
+}
+
+.advert-control{
+    .ptannonce{
+        position: relative;
+        margin: 20px 20px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        box-sizing: border-box;
+        box-shadow: 0px 3px 7px 0px rgba(93, 93, 93, 0.54);
+    }
+}
+
+.achat-control{
+    .row{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .achat{
+        border: 1px solid $color-primary-1;
+        margin: 10px;
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

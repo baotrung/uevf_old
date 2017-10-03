@@ -1,14 +1,13 @@
 {% extends "UevfPlatformBundle::layout.html.twig" %}
 {% block title %}
-<div class="title container-fluid hidden-sm-down">{# styles define in main.css #}
     {{parent() ~ 'profile'}}
-</div>
 {% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     {% stylesheets filter='cssrewrite'
         'bundles/uevfplatform/css/uevf-header.css'
-        'bundles/uevfplatform/css/page.css'%}
+        'bundles/uevfplatform/css/page.css'
+        'bundles/uevfuser/css/profileshow.css'%}
         <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
 {% endblock %}
@@ -17,25 +16,132 @@
     {{ include("UevfPlatformBundle::header.html.twig") }}
 {% endblock %}
 
+{% block pagecover %}
+<div class="row justify-content-center pagecover">
+    <div class="col-6 col-md-3 col-lg-2">
+        <div class="avatar dynamic-square" style="background-image: url('{{asset(app.user.avatar.filepath)}}')"></div>
+        <p class="accInfo">{{ app.user.username }}</p>
+        {#<p class="accInfo">{{ app.user.email }}</p>#}
+    </div>
+</div>
+{% endblock %}
+
 {% block pageContent %}
-<div class="pageContent">
-    <div class="user_show">
-        <p>{{ 'uevf.trans.username'|trans|upper }}: {{ app.user.username }}</p>
-        <p>{{ 'uevf.trans.email'|trans|upper }}: {{ app.user.email }}</p>
-        {% if app.user.user is null %}
-            <p>Vous n'avez pas encore enregistré vos informations personnelle !!!</p>
-            <a href="{{path('uevf_account_addinfo')}}">Ajoutez maintenant !</a>
-        {% else %}
-            <p>{{ "uevf.trans.firstname"|trans|upper }}: {{ app.user.user.firstname }}</p>
-            <p>{{ "uevf.trans.lastname"|trans|upper }}: {{ app.user.user.lastname }}</p>
-            <p>{{ "uevf.trans.gender"|trans|upper }}: {{ app.user.user.gender|trans }}</p>
-            <p>{{ "uevf.trans.birthday"|trans|upper }}: {{ app.user.user.birthday|date("d/m/Y") }}</p>
-            <p>{{ "uevf.trans.phonenumber"|trans|upper }}: {{ app.user.user.tel }}</p>
-            <p>{{ "uevf.trans.address"|trans|upper }}: {{ app.user.user.address }}</p>
-            <p>{{ "uevf.trans.zipcode"|trans|upper }}: {{ app.user.user.city.zipcode }}</p>
-            <p>{{ "uevf.trans.city"|trans|upper }}: {{ app.user.user.city.name }}</p>
-            <a class="btn" href="{{ path('uevf_account_editinfo') }}">{{'MODIFY'|trans}}</a>
-        {% endif %}
+<div class="row justify-content-center pageContent">
+    <div class="row justify-content-center">
+        <div class="col-10 col-lg-3 user_info">
+            {% if app.user.user is null %}
+                <a href="{{path('uevf_account_addinfo')}}">Ajoutez Vos Infos Perso !</a>
+            {% else %}
+                {% set difference = date("now"|date("d/m/Y")).diff(date(app.user.user.birthday|date("d/m/Y"))) %}
+                {% set age = difference.y +1 %}
+                <p class="name txtCenter">{{ app.user.user.firstname ~ '  ' ~ app.user.user.lastname }}</p>
+                <div class="row genderandage">
+                    <p class="col-6 txtCenter gender">{{app.user.user.gender|trans}}</p>
+                    <p class="col-6 txtCenter age">{{age ~ ' ' ~ 'years old'|trans}}</p>
+                </div>
+                <div class="row align-items-center info mail">
+                    <div class="col-1 img">
+                        <img src="{{asset('uploads/Main/icons/icon-email.png')}}" alt="adr">
+                    </div>
+                    <div class="col-9 push-sm-1 label">
+                        <p>{{ app.user.email }}</p>
+                    </div>
+                </div>
+
+                <div class="row align-items-center info phone">
+                    <div class="col-1 img">
+                        <img src="{{asset('uploads/Main/icons/icon-phone.png')}}" alt="adr">
+                    </div>
+                    <div class="col-9 push-sm-1 label">
+                        <p>{{ app.user.user.tel }}</p>
+                    </div>
+                </div>
+
+                <div class="row align-items-center info adr">
+                    <div class="col-1 img">
+                        <img src="{{asset('uploads/Main/icons/icon-location.png')}}" alt="adr">
+                    </div>
+                    <div class="col-9 push-sm-1 label">
+                        <p>{{ app.user.user.address ~ ', ' ~ app.user.user.city.zipcode ~ ' ' ~ app.user.user.city.name}}</p>
+                    </div>
+                </div>
+
+            {% endif %}
+            <br>
+            <a class="btn" href="{{ path('uevf_account_editinfo') }}">Modifiez</a>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-10 col-lg-8 user_control">
+            <div class="controler event-control">
+                <p>{{'uevf.trans.profile.remindEvent'|trans}}</p>
+                <div class="row justify-content-center">
+                    <div class="col-10 col-md-5 col-lg-3 event">
+                        <div class="image">
+                            <img src="{{asset('uploads/Event/img/colorrun.jpg')}}" alt="eventimg">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Run For Charity</h3>
+                        </div>
+                        <div class="date">
+                            06<br>AUG
+                        </div>
+                    </div>
+                    <div class="col-10 col-md-5 col-lg-3 event">
+                        <div class="image">
+                            <img src="{{asset('uploads/Event/img/fete_humanite.png')}}" alt="eventimg">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Fête de l'Huma</h3>
+                        </div>
+                        <div class="date">
+                            25 AUG
+                        </div>
+                    </div>
+                    <div class="col-10 col-md-5 col-lg-3 event">
+                        <div class="image">
+                            <img src="{{asset('uploads/Event/img/spacenight.jpg')}}" alt="eventimg">
+                        </div>
+                        <div class="description">
+                            <h3 class="title">Space Night</h3>
+                        </div>
+                        <div class="date">
+                            30 <br>SEP
+                        </div>
+                    </div>
+                </div>
+                <a href="">voir plus</a>
+            </div>
+            <div class="controler advert-control">
+                <p>Vos Annonces</p>
+                <div class="row justify-content-center">
+                    <div class="col-10 col-md-5 col-lg-3 ptannonce">
+                        <p>LOCATION</p>
+                        <h2>Sous location d'une chambre meublée à 15mn de Paris</h2>
+                    </div>
+                    <div class="col-10 col-md-5 col-lg-3 ptannonce">
+                        <p>SERVICE</p>
+                        <h2>Cherche aide-cuisinier à Nantes</h2>
+                    </div>
+                    <div class="col-10 col-md-5 col-lg-3 ptannonce">
+                        <p>SERVICE</p>
+                        <h2>Recherche nounou vietnamienne</h2>
+                    </div>
+                </div>
+                <a href="">voir plus</a>
+            </div>
+            <div class="controler achat-control">
+                <p>Vos Achats</p>
+                <div class="row">
+                    <div class="col-5 col-md-3 col-lg-2 achat dynamic-square" style="background-image:url('{{asset('uploads/boutique/img/tetdd.jpg')}}')"></div>
+                    <div class="col-5 col-md-3 col-lg-2 achat dynamic-square" style="background-image:url('{{asset('uploads/boutique/img/banh-chung.jpg')}}')"></div>
+                    <div class="col-5 col-md-3 col-lg-2 achat dynamic-square" style="background-image:url('{{asset('uploads/boutique/img/sactissu.jpg')}}')"></div>
+                    <div class="col-5 col-md-3 col-lg-2 achat dynamic-square" style="background-image:url('{{asset('uploads/Event/img/spacenight.jpg')}}')"></div>
+                    <div class="col-5 col-md-3 col-lg-2 achat dynamic-square" style="background-image:url('{{asset('uploads/boutique//img/porte-cle.JPG')}}')"></div>
+                    <div class="col-5 col-md-3 col-lg-2 achat dynamic-square" style="background-image:url('{{asset('uploads/Event/img/colorrun.jpg')}}')"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

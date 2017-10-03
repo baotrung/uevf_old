@@ -146,7 +146,6 @@ class AccountImage
         // Generate a unique name for the file before saving it
         $fileName = md5(uniqid()).'.'.$this->file->guessExtension();
         // Move the file to the directory on server
-        $location = 'uploads/img/account/';
         $this->file->move($this->getUploadRootDir(),$fileName);
         $this->alt = $alt;
         $this->filename = $fileName;

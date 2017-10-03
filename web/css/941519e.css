@@ -241,96 +241,179 @@ header {
  * @x {booleen}
  * @y {booleen}
  */
-.main > div {
-  height: 100vh; }
-.main .form {
-  background-color: white;
-  height: 550px;
-  padding: 0;
-  border-radius: 10px;
-  overflow: hidden; }
-  .main .form .image {
-    height: 100%;
-    background-image: url("../uploads/Main/wallpaper/student-wallpapers.jpg");
-    background-size: cover;
-    background-position: center;
-    vertical-align: middle; }
-    .main .form .image h1 {
-      color: rgba(255, 255, 255, 0.66);
-      text-align: center;
-      font-size: 40px;
-      line-height: 550px; }
-  .main .form .inputfield {
-    height: 550px;
-    padding-top: 50px; }
-    .main .form .inputfield .logo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 60px; }
-      .main .form .inputfield .logo img {
-        width: 100%;
-        height: 100%;
-        opacity: 0.8; }
-    .main .form .inputfield form {
-      padding: 0 20px; }
-      .main .form .inputfield form input[type=email],
-      .main .form .inputfield form input[type=password],
-      .main .form .inputfield form input[type=tel],
-      .main .form .inputfield form input[type=text],
-      .main .form .inputfield form input[type=url] {
-        background-color: rgba(255, 255, 255, 0);
-        border-top: 0;
-        border-left: 0;
-        border-right: 0;
-        border-radius: 0;
-        padding-left: 2px;
-        margin: 10px 0; }
-        .main .form .inputfield form input[type=email]::-webkit-input-placeholder,
-        .main .form .inputfield form input[type=password]::-webkit-input-placeholder,
-        .main .form .inputfield form input[type=tel]::-webkit-input-placeholder,
-        .main .form .inputfield form input[type=text]::-webkit-input-placeholder,
-        .main .form .inputfield form input[type=url]::-webkit-input-placeholder {
-          /* Chrome/Opera/Safari */
-          color: rgba(0, 48, 63, 0.51); }
-        .main .form .inputfield form input[type=email]::-moz-placeholder,
-        .main .form .inputfield form input[type=password]::-moz-placeholder,
-        .main .form .inputfield form input[type=tel]::-moz-placeholder,
-        .main .form .inputfield form input[type=text]::-moz-placeholder,
-        .main .form .inputfield form input[type=url]::-moz-placeholder {
-          /* Firefox 19+ */
-          color: rgba(0, 48, 63, 0.51); }
-        .main .form .inputfield form input[type=email]:-ms-input-placeholder,
-        .main .form .inputfield form input[type=password]:-ms-input-placeholder,
-        .main .form .inputfield form input[type=tel]:-ms-input-placeholder,
-        .main .form .inputfield form input[type=text]:-ms-input-placeholder,
-        .main .form .inputfield form input[type=url]:-ms-input-placeholder {
-          /* IE 10+ */
-          color: rgba(0, 48, 63, 0.51); }
-        .main .form .inputfield form input[type=email]:-moz-placeholder,
-        .main .form .inputfield form input[type=password]:-moz-placeholder,
-        .main .form .inputfield form input[type=tel]:-moz-placeholder,
-        .main .form .inputfield form input[type=text]:-moz-placeholder,
-        .main .form .inputfield form input[type=url]:-moz-placeholder {
-          /* Firefox 18- */
-          color: rgba(0, 48, 63, 0.51); }
-      .main .form .inputfield form input[type=submit] {
-        margin: 0 auto; }
-      .main .form .inputfield form label {
-        color: rgba(0, 48, 63, 0.51);
-        font-size: 12px; }
-      .main .form .inputfield form .form-group {
-        margin-bottom: 31px; }
-    .main .form .inputfield .register {
-      display: block;
-      margin: 30px 0 0;
-      font-size: 12px;
-      text-align: center;
-      position: relative;
-      margin-top: 20px; }
-
 body {
-  background-image: url("../uploads/Main/wallpaper/student-wallpapers-blur.jpg");
-  background-size: cover;
-  background-position: center; }
+  background-color: #e2e2e2; }
 
-/*# sourceMappingURL=register.css.map */
+.main {
+  padding: 0; }
+
+.pagecover {
+  position: relative;
+  padding-top: 85px;
+  padding-bottom: 5vh;
+  background-image: url(../uploads/Main/wallpaper/ship.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top; }
+
+.pageContent {
+  position: relative;
+  display: block;
+  width: 96%;
+  margin-top: -5vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px #7a7a7a;
+  background-color: #fff; }
+
+/*# sourceMappingURL=page.css.map */
+
+/**
+ * mixin centerer content
+ * @x {booleen}
+ * @y {booleen}
+ */
+.pageContent {
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 0 #fff;
+  padding: 0; }
+  .pageContent > .row {
+    padding: 0; }
+
+.avatar {
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.65);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.accInfo {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center; }
+
+.user_info {
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px #7a7a7a;
+  background-color: #fff;
+  margin: 0 20px 25px 20px;
+  padding: 10px; }
+  @media screen and (min-width: 970px) {
+    .user_info {
+      max-height: 380px; } }
+  .user_info a {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .user_info .name {
+    color: #00303e;
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 25px; }
+  .user_info .genderandage {
+    margin-bottom: 25px; }
+    .user_info .genderandage p {
+      color: #ee7242;
+      font-weight: 700;
+      height: 35px;
+      line-height: 35px; }
+    .user_info .genderandage .gender {
+      border-right: 1px solid rgba(184, 184, 184, 0.51); }
+  .user_info .info {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10px; }
+    .user_info .info img {
+      width: 100%;
+      background-color: #ee7242; }
+    .user_info .info .img {
+      padding: 0; }
+    .user_info .info .label {
+      height: 30px; }
+      .user_info .info .label p {
+        font-size: 20px;
+        line-height: 30px; }
+
+.user_control {
+  margin: 0 20px 25px 20px;
+  padding: 0; }
+
+.controler {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px #7a7a7a;
+  background-color: #fff;
+  padding: 10px;
+  padding-bottom: 30px;
+  margin-bottom: 25px; }
+  .controler a {
+    display: block;
+    width: 100px;
+    margin: auto; }
+
+.event-control .event {
+  position: relative;
+  margin: 20px 20px;
+  padding: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 7px 0px rgba(93, 93, 93, 0.54); }
+  .event-control .event .date {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #ee7242;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: -15px;
+    left: -15px; }
+  .event-control .event .image {
+    background-color: #a2604a;
+    display: block;
+    width: 100%;
+    height: 150px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden; }
+    .event-control .event .image img {
+      width: 100%; }
+  .event-control .event .description {
+    background-color: rgba(255, 255, 255, 0.85);
+    display: block;
+    width: 100%;
+    height: 70px;
+    border-radius: 0 0 5px 5px;
+    padding: 20px 10px 10px 10px;
+    text-align: center;
+    overflow: hidden; }
+    .event-control .event .description .title {
+      color: #00303e; }
+
+.advert-control .ptannonce {
+  position: relative;
+  margin: 20px 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 7px 0px rgba(93, 93, 93, 0.54); }
+
+.achat-control .row {
+  padding-left: 25px;
+  padding-right: 25px; }
+.achat-control .achat {
+  border: 1px solid #ee7242;
+  margin: 10px;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+/*# sourceMappingURL=profileshow.css.map */

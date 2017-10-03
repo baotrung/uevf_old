@@ -18,7 +18,7 @@ header {
   padding: 10px;
   color: #fff; }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 970px) {
   .uevf-menu {
     display: block;
     width: 100%;
@@ -94,7 +94,7 @@ header {
           .uevf-menu .wrap .uevf-navbar > .item .subitem-lv1 {
             display: none; }
           .uevf-menu .wrap .uevf-navbar > .item:hover {
-            background-color: #db470e; }
+            background-color: #ee7242; }
             .uevf-menu .wrap .uevf-navbar > .item:hover > a span {
               color: #fff; }
             .uevf-menu .wrap .uevf-navbar > .item:hover .subitem-lv1 {
@@ -103,7 +103,7 @@ header {
               padding: 5px;
               position: absolute;
               left: 0;
-              background-color: #db470e; }
+              background-color: #ee7242; }
               .uevf-menu .wrap .uevf-navbar > .item:hover .subitem-lv1 .item {
                 width: 170px;
                 height: auto;
@@ -127,7 +127,7 @@ header {
                   background-color: rgba(202, 228, 219, 0.75); }
         .uevf-menu .wrap .uevf-navbar .active span {
           color: #00303e !important; } }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 970px) {
   .uevf-menu {
     display: block;
     width: 100%;
@@ -207,13 +207,13 @@ header {
           .uevf-menu .wrap .uevf-navbar > .item .subitem-lv1 {
             display: none; }
           .uevf-menu .wrap .uevf-navbar > .item:hover {
-            background-color: #db470e; }
+            background-color: #ee7242; }
             .uevf-menu .wrap .uevf-navbar > .item:hover a {
               text-decoration: none; }
               .uevf-menu .wrap .uevf-navbar > .item:hover a span {
                 color: #fff; }
             .uevf-menu .wrap .uevf-navbar > .item:hover .subitem-lv1 {
-              background-color: #db470e;
+              background-color: #ee7242;
               display: block;
               list-style: none;
               width: 100%;
@@ -244,7 +244,7 @@ header {
 .main > div {
   height: 100vh; }
 .main .form {
-  background-color: white;
+  background-color: #fff;
   height: 450px;
   padding: 0;
   border-radius: 10px;

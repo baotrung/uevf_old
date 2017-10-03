@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $active.addClass('active');
+    /*$active.addClass('active');*/
     $('.dynamic-square').height($('.dynamic-square').width());
 });
 
